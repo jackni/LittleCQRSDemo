@@ -62,11 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\DispatchCommand.cs" />
     <Compile Include="Command\DispatchCommandHandler.cs" />
-    <Compile Include="Command\EmailSendCommand.cs" />
-    <Compile Include="Command\SMSSendCommand.cs" />
+    <Compile Include="Command\IDispatchCommandHandler.cs" />
     <Compile Include="DataStore\DispatchEventContext.cs" />
     <Compile Include="DataStore\Models\DispatchEvent.cs" />
+    <Compile Include="DomainModel\DeviceType.cs" />
+    <Compile Include="DomainModel\Notification.cs" />
+    <Compile Include="MessageBus\CommandBus.cs" />
+    <Compile Include="MessageBus\ICommandBus.cs" />
+    <Compile Include="MessageBus\IEventBus.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,12 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Event\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SandBox.MessageContract\SandBox.MessageContract.csproj">
-      <Project>{7398d2fa-9ae2-4e37-8cab-cfdd80fa21b7}</Project>
-      <Name>SandBox.MessageContract</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,7 +11,7 @@ namespace SandBox.DataStore.Models
 {
     public class DispatchEvent : IEvent
     {
-        [Required]
+        [Key]
         [Index("IX_EventId", IsUnique = true)]
         public Guid Id { get; set; }
         public DateTimeOffset TimeStamp { get; set; }

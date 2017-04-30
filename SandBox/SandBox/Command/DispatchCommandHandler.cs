@@ -8,16 +8,12 @@ using CQRSlite.Messages;
 
 namespace SandBox.Command
 {
-    public class DispatchCommandHandler: ICommandHandler<EmailSendCommand>, ICommandHandler<SMSSendCommand>
+    public class DispatchCommandHandler: IDispatchCommandHandler
     {
-        Task IHandler<SMSSendCommand>.Handle(SMSSendCommand message)
+        public Task Handle(DispatchCommand message)
         {
             throw new NotImplementedException();
         }
 
-        Task IHandler<EmailSendCommand>.Handle(EmailSendCommand message)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

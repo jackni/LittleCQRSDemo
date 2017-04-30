@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SandBox.Command
+namespace SanBoxApi.Services
 {
-    public class EmailSendCommand : Command
+    public interface INotificationService
     {
     }
 }
