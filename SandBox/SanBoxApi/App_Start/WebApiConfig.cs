@@ -9,6 +9,8 @@ namespace SanBoxApi
     {
         public static void Register(HttpConfiguration config)
         {
+            //Autofac configuration
+            AutoFacConfig.Config(GlobalConfiguration.Configuration);
             // Web API configuration and services
 
             // Web API routes

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SanBoxApi.MessageBus
+namespace SanBox.MessageBus
 {
     public interface ICommandBus<T> where T: class
      {

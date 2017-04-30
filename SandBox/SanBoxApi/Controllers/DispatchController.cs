@@ -1,5 +1,5 @@
 ﻿using SanBox.DomainModel;
-using SanBoxApi.MessageBus;
+using SanBox.MessageBus;
 using SandBox.Command;
 using System;
 using System.Collections.Generic;

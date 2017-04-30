@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Threading.Tasks;
 
-namespace SanBoxApi.MessageBus
+namespace SanBox.MessageBus
 {
     public class CommandBus : ICommandBus<DispatchCommand>
     {
