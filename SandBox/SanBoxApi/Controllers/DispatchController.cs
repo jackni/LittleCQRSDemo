@@ -13,9 +13,9 @@ namespace SanBoxApi.Controllers
 {
     public class DispatchController : ApiController
     {
-        private ICommandBus<DispatchCommand> _cmdBus;
+        private ICommandBus _cmdBus;
 
-        public DispatchController(ICommandBus<DispatchCommand> cmdBus)
+        public DispatchController(ICommandBus cmdBus)
         {
             //we will inject the command bus here.
             _cmdBus = cmdBus;

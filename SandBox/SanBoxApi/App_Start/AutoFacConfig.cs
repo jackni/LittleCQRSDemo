@@ -23,8 +23,8 @@ namespace SanBoxApi
             // OPTIONAL: Register the Autofac filter provider.
             builder.RegisterWebApiFilterProvider(config);
 
-            //builder.RegisterGeneric(typeof(CommandBus)).As(typeof(ICommandBus<DispatchCommand>)).InstancePerRequest();
-            
+     
+            builder.Register(s => new CommandBus()).As<ICommandBus>().InstancePerRequest();
 
             var container = builder.Build();
 

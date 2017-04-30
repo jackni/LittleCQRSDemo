@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SanBox.MessageBus
 {
-    public interface ICommandBus<T> where T: class
-     {
-        Task QueueCommand(T command);
+    public interface ICommandBus
+    {
+        Task QueueCommand<T>(T command);
 
         //Task DeQueueCommand(T command);
 
