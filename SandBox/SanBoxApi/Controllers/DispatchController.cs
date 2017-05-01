@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace SanBoxApi.Controllers
 {
@@ -23,6 +24,7 @@ namespace SanBoxApi.Controllers
 
         [HttpPost]
         [Route("api/Dispatch/SendNotification")]
+        [ResponseType(typeof(DispatchCommand))]
         public async Task<IHttpActionResult> SendNotification(DispatchCommand command)
         {
 
@@ -36,7 +38,11 @@ namespace SanBoxApi.Controllers
                 await _cmdBus.QueueCommand(command);
                 
             }
-            catch(Exception ex)
+            catch(AggregateException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
             {
                 throw;
             }
