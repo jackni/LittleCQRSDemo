@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Integration.WebApi;
 using SanBox.MessageBus;
+using SanBoxApi.Services;
 using SandBox.Command;
 
 using System;
@@ -25,7 +26,8 @@ namespace SanBoxApi
 
      
             builder.Register(s => new CommandBus()).As<ICommandBus>().InstancePerRequest();
-
+            builder.Register(s => new GooglePushNotificaitonService()).As<INotificationService>().InstancePerRequest();
+            
             var container = builder.Build();
 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
